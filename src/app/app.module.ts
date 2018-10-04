@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import { NavToolBarComponent } from './nav-tool-bar/nav-tool-bar.component';
 import { InputSearchComponent } from './input-search/input-search.component';
+import { HeaderSectionComponent } from './header-section/header-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavToolBarComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    HeaderSectionComponent
   ],
   imports: [
     BrowserModule,

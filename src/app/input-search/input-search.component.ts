@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class InputSearchComponent implements OnInit {
   alerta() {
-    alert('search click');
+    alert('searching clicked');
   }
   constructor() {}
 
