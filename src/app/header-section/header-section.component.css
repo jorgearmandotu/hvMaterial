@@ -1,4 +1,12 @@
 header{
-    background-color: blue;
-    padding: 0%;
+    background-attachment: fixed;
+    background-color: aqua;
+    margin: 0%;
+    overflow: hidden;
+}
+h1{
+padding:0m;
+}
+h2{
+ padding: 1em;
 }

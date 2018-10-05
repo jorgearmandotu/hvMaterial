@@ -9,13 +9,17 @@ import { MaterialModule } from './material';
 import { NavToolBarComponent } from './nav-tool-bar/nav-tool-bar.component';
 import { InputSearchComponent } from './input-search/input-search.component';
 import { HeaderSectionComponent } from './header-section/header-section.component';
+import { TabMainComponent } from './tab-main/tab-main.component';
+import { CardContentComponent } from './card-content/card-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavToolBarComponent,
     InputSearchComponent,
-    HeaderSectionComponent
+    HeaderSectionComponent,
+    TabMainComponent,
+    CardContentComponent
   ],
   imports: [
     BrowserModule,
