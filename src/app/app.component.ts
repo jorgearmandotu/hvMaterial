@@ -1,3 +1,4 @@
+import { DataService } from './data.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,4 +12,5 @@ export class AppComponent {
   alerta() {
   alert('searching');
   }
-}
+
+

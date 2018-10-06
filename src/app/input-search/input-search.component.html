@@ -1,5 +1,5 @@
-<mat-form-field class="example-form-field">
-  <input matInput type="text" placeholder="Search">
+<mat-form-field class="form-field-search">
+  <input matInput type="text" placeholder="Search" [(ngModel)]="value">
   <button mat-button matSuffix mat-icon-button aria-label="search" (click)="alerta()">
     <mat-icon>search</mat-icon>
   </button>

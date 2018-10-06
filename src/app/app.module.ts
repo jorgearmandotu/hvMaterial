@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +13,7 @@ import { InputSearchComponent } from './input-search/input-search.component';
 import { HeaderSectionComponent } from './header-section/header-section.component';
 import { TabMainComponent } from './tab-main/tab-main.component';
 import { CardContentComponent } from './card-content/card-content.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,11 @@ import { CardContentComponent } from './card-content/card-content.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
