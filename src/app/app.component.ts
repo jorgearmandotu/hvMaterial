@@ -12,5 +12,4 @@ export class AppComponent {
   alerta() {
   alert('searching');
   }
-
-
+}

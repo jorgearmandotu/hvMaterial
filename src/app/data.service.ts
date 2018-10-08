@@ -11,6 +11,6 @@ export class DataService {
     console.log('service is running');
    }
    getdata() {
-     this.http.get('http://localhost/my-site/');
+     return this.http.get<ImageData[]>('http://localhost/my-site/');
    }
 }

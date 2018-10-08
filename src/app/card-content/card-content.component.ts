@@ -1,3 +1,4 @@
+import { ImagenData } from './../ImagenData';
 import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
 
 export class CardContentComponent implements OnInit {
 
-
+  imagenData = [];
 
   constructor(private dataService: DataService) {
-    this.dataService.getdata();
+    this.dataService.getdata().subscribe(arg => {
+      this.imagenData = arg;
+    });
    }
 
   ngOnInit() {
