@@ -14,6 +14,7 @@ import { HeaderSectionComponent } from './header-section/header-section.componen
 import { TabMainComponent } from './tab-main/tab-main.component';
 import { CardContentComponent } from './card-content/card-content.component';
 import { DataService } from './data.service';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DataService } from './data.service';
     InputSearchComponent,
     HeaderSectionComponent,
     TabMainComponent,
-    CardContentComponent
+    CardContentComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
