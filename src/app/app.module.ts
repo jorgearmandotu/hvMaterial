@@ -15,6 +15,7 @@ import { TabMainComponent } from './tab-main/tab-main.component';
 import { CardContentComponent } from './card-content/card-content.component';
 import { DataService } from './data.service';
 import { ContentComponent } from './content/content.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContentComponent } from './content/content.component';
     HeaderSectionComponent,
     TabMainComponent,
     CardContentComponent,
-    ContentComponent
+    ContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
