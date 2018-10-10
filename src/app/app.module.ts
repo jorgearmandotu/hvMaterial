@@ -16,6 +16,7 @@ import { CardContentComponent } from './card-content/card-content.component';
 import { DataService } from './data.service';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FooterComponent } from './footer/footer.component';
     MaterialModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
