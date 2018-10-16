@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class CardContentComponent implements OnInit {
 
-  imagenData = [];
+  productsAllData = [];
 
   constructor(private dataService: DataService) {
-    this.dataService.getdata().subscribe(arg => {
-      this.imagenData = arg;
+    this.dataService.getAllProducts().subscribe(arg => {
+      this.productsAllData = arg;
     });
    }
 
