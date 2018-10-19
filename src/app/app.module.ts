@@ -1,3 +1,4 @@
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,8 @@ import { DataService } from './data.service';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
     TabMainComponent,
     CardContentComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
