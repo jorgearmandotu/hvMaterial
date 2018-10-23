@@ -1,6 +1,6 @@
-import { ImagenData } from './../ImagenData';
+import { ImagenData } from './../models/models';
 import { DataService } from './../data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-card-content',
@@ -10,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class CardContentComponent implements OnInit {
 
+  @Input() public idCategory;
   productsAllData = [];
 
   constructor(private dataService: DataService) {
-    this.dataService.getAllProducts().subscribe(arg => {
-      this.productsAllData = arg;
-    });
+   // console.log(this.idCategory);
+   // this.dataService.getCategoryProducts('1').subscribe(arg => {
+   //   this.productsAllData = arg;
+    //});
    }
 
   ngOnInit() {

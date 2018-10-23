@@ -1,3 +1,4 @@
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabMainComponent implements OnInit {
 
-  constructor() { }
+  categorys = [];
+
+  constructor(private dataservice: DataService) {
+    this.dataservice.getAllCategory().subscribe(arg => {
+      this.categorys = arg;
+    });
+
+   }
 
   ngOnInit() {
   }

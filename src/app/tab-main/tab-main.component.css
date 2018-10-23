@@ -1,0 +1,13 @@
+.tab-main {
+  max-width: 80%;
+  text-align: left;
+  margin: 0% auto;
+}
+
+@media (max-width: 800px) {
+  .tab-main {
+    max-width: 100%;
+    text-align: left;
+    margin: 0% auto;
+  }
+}

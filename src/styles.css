@@ -6,11 +6,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; text-align: center; overflow-y: hidden }
 
-.tab-main {
-    max-width: 80%;
-    text-align: left;
-    margin: 0% auto;
-}
+
 .container {
   overflow-y: auto;
 }
@@ -18,12 +14,8 @@ body { margin: 0; font-family: 'Roboto', sans-serif; text-align: center; overflo
 @media (max-width: 800px) {
 
     body {
-      font-size: 0.5em;
+      font-size: 1em;
     }
 
-    .tab-main {
-        max-width: 100%;
-        text-align: left;
-        margin: 0% auto;
-    }
+
 }

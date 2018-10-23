@@ -18,8 +18,14 @@ import { DataService } from './data.service';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './login/login.component';
+//import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { InfoModule } from './info/info.module';
+import { ProductsModule } from './producs/products.module';
+//import { RegisterComponent } from './auth/register/register.component';
+//import { LoginComponent } from './auth/login/login.component';
+import { AuthModule } from './auth/auth.module';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CardContentComponent,
     ContentComponent,
     FooterComponent,
-    LoginComponent,
+    //LoginComponent,
     NotFoundComponent
   ],
   imports: [
@@ -40,7 +46,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MaterialModule,
     FormsModule,
     HttpClientModule,
+    InfoModule,
     AppRoutingModule,
+    ProductsModule,
+    AuthModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -2,14 +2,14 @@
   <mat-toolbar-row>
     <span>HV Distritec</span>
     <span class="example-spacer"></span>
-
+    <a routerLink='/' class="menuLinks" routerLinkActive="active"><mat-label class="example-icon">INICIO</mat-label></a>
     <app-input-search></app-input-search>
 
     <mat-icon class="example-icon">add_shopping_cart</mat-icon>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">
        <a routerLink='/login'> <button mat-menu-item>Registrate</button> </a>
-        <button mat-menu-item>Item 2</button>
+       <a routerLink='/vision'> <button mat-menu-item>vision</button> </a>
       </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
