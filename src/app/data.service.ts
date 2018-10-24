@@ -1,4 +1,4 @@
-import { Info, Category } from './models/models';
+import { Info, Category, ProductsCategory } from './models/models';
 import { Products } from './models/Products';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -16,7 +16,7 @@ export class DataService {
      return this.http.get<ImageData[]>('http://localhost/my-site/');
    }
    getAllProducts() {
-     return this.http.get<Products[]>('http://localhost/my-site/allproducts.php');
+     return this.http.get<ProductsCategory[]>('http://localhost/my-site/productsCategory.php');
    }
    getCategoryProducts(category: String) {
     return this.http.get<Products[]>('http://localhost/my-site/allproducts.php?category=' + category);

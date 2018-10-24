@@ -25,3 +25,8 @@ export interface Info {
   'title': String;
   'content': String;
 }
+export interface ProductsCategory {
+  'id': String;
+  'nombre': String;
+  'products';
+}

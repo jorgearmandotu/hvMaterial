@@ -1,6 +1,6 @@
 <mat-tab-group class="tab-main">
   <mat-tab *ngFor="let category of categorys" label="{{category.id}}">
-    <app-card-content [idCategory]="category.id"></app-card-content>
+    <app-card-content [idCategory]="category.name"></app-card-content>
   </mat-tab>
 
 </mat-tab-group>
