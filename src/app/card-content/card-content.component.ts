@@ -14,10 +14,10 @@ export class CardContentComponent implements OnInit {
   productsAllData = [];
 
   constructor(private dataService: DataService) {
-   // console.log(this.idCategory);
-   // this.dataService.getCategoryProducts('1').subscribe(arg => {
-   //   this.productsAllData = arg;
-    //});
+    console.log(this.idCategory);
+    this.dataService.getCategoryProducts(this.idCategory).subscribe(arg => {
+      this.productsAllData = arg;
+    });
    }
 
   ngOnInit() {

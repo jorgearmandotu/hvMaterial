@@ -1,7 +1,7 @@
 <mat-card class="product-card" *ngFor="let product of productsAllData">
   <mat-card-header>
     <!--<div mat-card-avatar class="example-header-image"></div>-->
-    <mat-card-title>{{product.nameProduct}}</mat-card-title>
+    <mat-card-title>{{idCategory}}</mat-card-title>
     <mat-card-subtitle> {{product.price | currency:'COP':'$ ':'1.1-2'}}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src= {{product.urlImage}} alt=''>
