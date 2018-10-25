@@ -13,22 +13,22 @@ export class DataService {
     console.log('service is running');
    }
    getdata() {
-     return this.http.get<ImageData[]>('http://localhost/my-site/');
+     return this.http.get<ImageData[]>('http://localhost/hvbackend/');
    }
    getAllProducts() {
-     return this.http.get<ProductsCategory[]>('http://localhost/my-site/productsCategory.php');
+     return this.http.get<any[]>('http://localhost/hvbackend/productsCategory.php');
    }
    getCategoryProducts(category: String) {
-    return this.http.get<Products[]>('http://localhost/my-site/allproducts.php?category=' + category);
+    return this.http.get<Products[]>('http://localhost/hvbackend/allproducts.php?category=' + category);
     //return this.http.post<Products[]>('http://localhost/my-site/allproducts.php', category);
   }
   getAllCategory(){
-    return this.http.get<Category[]>('http://localhost/my-site/allcategorys.php');
+    return this.http.get<Category[]>('http://localhost/hvbackend/allcategorys.php');
   }
   getMision() {
-    return this.http.get<Info[]>('http://localhost/my-site/allproducts.php');
+    return this.http.get<Info[]>('http://localhost/hvbackend/allproducts.php');
   }
   setLogin(user: String, password) {
-    this.http.post('http://localhost/my-site/loguear.php', user, password);
+    this.http.post('http://localhost/hvbackend/loguear.php', user, password);
   }
 }

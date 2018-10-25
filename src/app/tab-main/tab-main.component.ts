@@ -9,14 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class TabMainComponent implements OnInit {
 
   categorys = [];
-
   constructor(private dataservice: DataService) {
     this.dataservice.getAllProducts().subscribe(arg => {
       this.categorys = arg;
     });
-
    }
-
   ngOnInit() {
   }
 

@@ -10,14 +10,14 @@ import { Component, OnInit, Input} from '@angular/core';
 
 export class CardContentComponent implements OnInit {
 
-  @Input() public idCategory;
+  @Input() public title;
   productsAllData = [];
 
   constructor(private dataService: DataService) {
-    console.log(this.idCategory);
-    this.dataService.getCategoryProducts(this.idCategory).subscribe(arg => {
-      this.productsAllData = arg;
-    });
+    //console.log(this.products);
+    //this.dataService.getCategoryProducts(this.products).subscribe(arg => {
+      //this.productsAllData = arg;
+    //});
    }
 
   ngOnInit() {

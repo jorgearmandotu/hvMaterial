@@ -4,6 +4,13 @@
   margin: 0% auto;
 }
 
+.product-card {
+  max-width: 200px;
+  min-height: 390px;
+  float: left;
+  margin: 3pt;
+  }
+  
 @media (max-width: 800px) {
   .tab-main {
     max-width: 100%;

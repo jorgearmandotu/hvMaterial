@@ -28,5 +28,5 @@ export interface Info {
 export interface ProductsCategory {
   'id': String;
   'nombre': String;
-  'products';
+  'products': any;
 }

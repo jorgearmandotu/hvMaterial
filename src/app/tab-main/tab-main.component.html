@@ -1,6 +1,25 @@
 <mat-tab-group class="tab-main">
-  <mat-tab *ngFor="let category of categorys" label="{{category.id}}">
-    <app-card-content [idCategory]="category.name"></app-card-content>
+  <mat-tab *ngFor="let category of categorys" label="{{category.nombre}}">
+    <!--<app-card-content *ngFor='let product of category.products' [title]= "product.nameProduct" ></app-card-content>-->
+
+    <mat-card class="product-card" *ngFor="let product of category.products">
+        <mat-card-header>
+          <!--<div mat-card-avatar class="example-header-image"></div>-->
+          <mat-card-title>{{product.nameProduct}}</mat-card-title>
+          <mat-card-subtitle> {{product.price | currency:'COP':'$ ':'1.1-2'}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src= {{product.urlImage}} alt=''>
+        <mat-card-content>
+          <p>
+            {{product.descriptionProduct}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>      
+
   </mat-tab>
 
 </mat-tab-group>
