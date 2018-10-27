@@ -10,23 +10,23 @@ import { Products } from 'src/app/models/Products';
 })
 export class DetallesComponent implements OnInit {
 
-  idP: String = "";
- 
+  idP: number;
   product = [];
 
   constructor(private _route: ActivatedRoute,  private dataservice: DataService) {
-
+    let id = this._route.snapshot.paramMap.get('id');
+    this.idP = +id;
+    this.dataservice.getDetailProduct(this.idP).subscribe(arg => {
+      this.product = arg;
+      console.log(this.product);
+    });
     //console.log(this._route.snapshot.paramMap.get('id'));
    }
 
   ngOnInit() {
-    let id = this._route.snapshot.paramMap.get('id');
-    alert('el id es '+id)
-    this.idP = id;
-    this.dataservice.getDetailProduct(this.idP).subscribe(arg => {
-      this.product = arg;
-
-    });
+    //let id = this._route.snapshot.paramMap.get('id');
+    //alert('el id es '+id);
+    
 
   }
 

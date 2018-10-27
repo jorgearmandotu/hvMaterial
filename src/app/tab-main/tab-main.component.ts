@@ -17,8 +17,4 @@ export class TabMainComponent implements OnInit {
   ngOnInit() {
   }
 
-  detalles(id){
-    alert('detalles product'+id);
-  }
-
 }

@@ -1,7 +1,10 @@
-<div class="content-page">
-  detalles works!{{idP}} es el product
-
-  id:{{product.Idproduct}}
-  name:{{product.nameProduct}}
-  p:{{product}}
+<div class="content-page" *ngFor="let detail of product">
+  <H1>{{detail.nameProduct}}</H1>
+  <img src="{{detail.urlImage}}">
+  <ul>
+    <li>name: {{detail.nameProduct}}</li>
+    <li>price: {{detail.price}}</li>
+    <li>descripcion: {{detail.descriptionProduct}}</li>
+  </ul>
+  <div class="alldetail">{{detail.allDescriptionProduct}}</div>
 </div>

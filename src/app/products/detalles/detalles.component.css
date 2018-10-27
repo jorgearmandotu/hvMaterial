@@ -3,4 +3,7 @@
     height: 91%;
     margin-top: 65px;
   }
-  
+  .alldetail {
+    width: 100%;
+    height: min-content;
+  }
