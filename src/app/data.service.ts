@@ -18,6 +18,10 @@ export class DataService {
    getAllProducts() {
      return this.http.get<any[]>('http://localhost/hvbackend/productsCategory.php');
    }
+
+   getDetailProduct(id: String) {
+     return this.http.get<any>('http://localhost/hvbackend/detailProduct.php');
+   }
    getCategoryProducts(category: String) {
     return this.http.get<Products[]>('http://localhost/hvbackend/allproducts.php?category=' + category);
     //return this.http.post<Products[]>('http://localhost/my-site/allproducts.php', category);

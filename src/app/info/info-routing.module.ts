@@ -6,7 +6,7 @@ import { VisionComponent } from './vision/vision.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 
 const routes: Routes = [
-  {path: 'quienessomos', component: QuienesSomosComponent },
+  {path: '', component: QuienesSomosComponent },
   {path: 'mision', component: MisionComponent },
   {path: 'vision', component: VisionComponent },
 ];

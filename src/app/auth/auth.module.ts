@@ -6,12 +6,19 @@ import { MaterialModule } from '../material';
 import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const authRoutes : Routes = [
+  { path:'', component: LoginComponent },
+  { path:'register', component: RegisterComponent }
+]
 
 @NgModule({
   imports: [
     CommonModule,
     AuthRoutingModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forChild(authRoutes),
   ],
   declarations: [RegisterComponent, LoginComponent]
 })

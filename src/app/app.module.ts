@@ -20,12 +20,15 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 //import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { InfoModule } from './info/info.module';
-import { ProductsModule } from './producs/products.module';
+//import { InfoModule } from './info/info.module';
+//import { ProductsModule } from './producs/products.module';
 //import { RegisterComponent } from './auth/register/register.component';
 //import { LoginComponent } from './auth/login/login.component';
-import { AuthModule } from './auth/auth.module';
+//import { AuthModule } from './auth/auth.module';
 import { from } from 'rxjs';
+//import { ProductsComponent } from './products/products.component';
+//import { DetalleProductComponent } from './products/detalle-product/detalle-product.component';
+//import { DetallesComponent } from './products/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { from } from 'rxjs';
     ContentComponent,
     FooterComponent,
     //LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    //ProductsComponent,
+    //DetalleProductComponent,
+    //DetallesComponent
   ],
   imports: [
     BrowserModule,
@@ -46,10 +52,10 @@ import { from } from 'rxjs';
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    InfoModule,
+    //InfoModule,
     AppRoutingModule,
-    ProductsModule,
-    AuthModule,
+    //ProductsModule,
+    //AuthModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

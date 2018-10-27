@@ -11,5 +11,6 @@ export class AppComponent {
   value = 'search';
   alerta() {
   alert('searching');
+
   }
 }

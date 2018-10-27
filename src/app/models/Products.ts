@@ -10,10 +10,10 @@ export interface Products {
 }*/
 
 export interface Products {
-  'idProduct': String;
+  'Idproduct': String;
   'nameProduct': String;
   'descriptionProduct': String;
-  'largeDescription': String;
+  'allDescriptionProduct': String;
   'price': number;
   'urlImage': String;
   'category': String;
