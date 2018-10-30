@@ -3,8 +3,8 @@
   <img src="{{detail.urlImage}}">
   <ul>
     <li>name: {{detail.nameProduct}}</li>
-    <li>price: {{detail.price}}</li>
+    <li>price: {{detail.price | currency:'COP':'$ ':'1.1-2'}}</li>
     <li>descripcion: {{detail.descriptionProduct}}</li>
   </ul>
-  <div class="alldetail">{{detail.allDescriptionProduct}}</div>
+  <p text-angular ng-model="" class="alldetail">{{detail.allDescriptionProduct}}</p>
 </div>

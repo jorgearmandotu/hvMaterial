@@ -8,9 +8,10 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from '../guards/auth.guard';
+
 const authRoutes : Routes = [
-  { path:'', component: LoginComponent },
-  { path:'register', component: RegisterComponent }
+ 
 ]
 
 @NgModule({

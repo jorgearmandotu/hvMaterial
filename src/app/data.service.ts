@@ -1,4 +1,4 @@
-import { Info, Category, ProductsCategory } from './models/models';
+import { Info, Category, ProductsCategory, StatusLog } from './models/models';
 import { Products } from './models/Products';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -12,6 +12,11 @@ export class DataService {
   constructor(private http: HttpClient) {
     console.log('service is running');
    }
+
+   getCurrentUser(){
+    return this.http.get<StatusLog[]>('http://localhost/hvbackend/validLogin.php');
+   }
+
    getdata() {
      return this.http.get<ImageData[]>('http://localhost/hvbackend/');
    }

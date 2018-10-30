@@ -1,9 +1,12 @@
 .content-page {
     overflow-y: auto;
-    height: 91%;
-    margin-top: 65px;
+    height: 88%;
+    margin-top: 68px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
   }
   .alldetail {
-    width: 100%;
+    max-width: 100%;
     height: min-content;
   }

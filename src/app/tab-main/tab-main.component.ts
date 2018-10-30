@@ -12,8 +12,8 @@ export class TabMainComponent implements OnInit {
   constructor(private dataservice: DataService) {
     this.dataservice.getAllProducts().subscribe(arg => {
       this.categorys = arg;
-    });
-   }
+    }); 
+   } 
   ngOnInit() {
   }
 

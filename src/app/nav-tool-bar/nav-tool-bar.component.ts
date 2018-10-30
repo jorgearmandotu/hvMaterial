@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Component({
   selector: 'app-nav-tool-bar',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavToolBarComponent implements OnInit {
 
-  constructor() { }
+  statusLog = [];
+  //dataservice: DataService;
+  constructor(private dataservice: DataService) { 
+    this.dataservice.getCurrentUser().subscribe(arg => {
+      this.statusLog = arg;
+    }); 
+    console.log(this.statusLog); 
+  }
 
   ngOnInit() {
   }

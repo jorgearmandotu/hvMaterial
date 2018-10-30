@@ -1,3 +1,7 @@
+export interface StatusLog {
+  'status': boolean;
+}
+
 export interface ImagenData {
   'url': String;
   'alt': String;
