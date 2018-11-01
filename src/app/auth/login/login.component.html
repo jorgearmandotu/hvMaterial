@@ -1,18 +1,20 @@
 <div class="content-page">
   <div class="form-login">
-    <form (ngsubmit) = "login($event)">
+    <form (ngsubmit) = "login()">
       <mat-form-field class="inputsForm">
-        <input matInput placeholder="usuario o email" name="user" required>
+        <input matInput placeholder="usuario o email" name="user" [(ngModel)]="user.user">
       </mat-form-field>
 
       <mat-form-field class="inputsForm">
-        <input matInput placeholder="contraseña" type="password" name="password" required>
+        <input matInput placeholder="contraseña" type="password" name="password" [(ngModel)]="user.password" >
       </mat-form-field>
 
-      <button mat-raised-button color="primary" class="buttonForm" (click)='login()'>LOG IN</button>
+      <button mat-raised-button color="primary" class="buttonForm" (click)="login()">LOG IN</button>
       <div class="register">
         <a routerLink="/login/register"><span>crear cuenta,</span></a> <span>Terminos de privacidad</span>
+        <p>{{user.user}}</p>
       </div>
     </form>
+    
   </div>
 </div>

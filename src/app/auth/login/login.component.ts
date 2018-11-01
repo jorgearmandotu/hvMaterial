@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { UserData } from 'src/app/models/models';
+import { User } from 'src/app/models/models';
+import { LoginServiceService } from 'src/app/services/login-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +10,12 @@ import { UserData } from 'src/app/models/models';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  private user :UserData = {email:"", password:""};
-  constructor( private dataservice: DataService) {
+  user:User = {
+    user:'',
+    password: ''
+  };
+  status;
+  constructor( private loginservice: LoginServiceService, private router:Router) {
    }
 
   ngOnInit() {
@@ -19,6 +23,19 @@ export class LoginComponent implements OnInit {
 
   login(){
     //return this.dataservice.setLogin()(this.user.email, this.user.password).subscribe
+    console.log('submit');
+    console.log(this.user);
+    this.loginservice.setLogin(this.user).subscribe(arg => {
+      this.status = arg;
+      console.log(arg['status']);
+      if(arg['status']){
+        console.log('redirecion aprobada');
+        //this.router.navigate(['/']);
+        this.loginservice.getCurrentUser().subscribe(arg => {
+          console.log(arg['status']);
+        }); 
+      }
+    });
   }
 
 }

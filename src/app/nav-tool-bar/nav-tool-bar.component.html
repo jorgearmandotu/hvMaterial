@@ -8,9 +8,9 @@
     <mat-icon class="example-icon">add_shopping_cart</mat-icon>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">
-       <a *ngIf="!statusLog.status" routerLink='/login'> <button mat-menu-item>Iniciar sesion</button> </a>
-       <a *ngIf="statusLog.status" routerLink='/login'> <button mat-menu-item>Cerrar sesion</button> </a>
-       <a *ngFor="let cat of statusLog" routerLink='/info'> <button mat-menu-item>Quienes somos{{cat.status}}</button></a>
+       <a *ngIf="!statusLog" routerLink='/login'> <button mat-menu-item>Iniciar sesion</button></a>
+       <a *ngIf="statusLog" routerLink='/login'> <button mat-menu-item>Cerrar sesion</button> </a>
+       <a routerLink='/info'> <button mat-menu-item>Quienes somos{{statusLog}}</button></a>
       </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

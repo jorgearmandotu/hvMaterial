@@ -13,9 +13,7 @@ export class DataService {
     console.log('service is running');
    }
 
-   getCurrentUser(){
-    return this.http.get<StatusLog[]>('http://localhost/hvbackend/validLogin.php');
-   }
+   
 
    getdata() {
      return this.http.get<ImageData[]>('http://localhost/hvbackend/');

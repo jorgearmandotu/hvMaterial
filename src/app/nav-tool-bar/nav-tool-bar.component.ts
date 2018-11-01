@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { CompileShallowModuleMetadata } from '@angular/compiler';
+import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-nav-tool-bar',
@@ -9,11 +10,11 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
 })
 export class NavToolBarComponent implements OnInit {
 
-  statusLog = [];
+  statusLog;
   //dataservice: DataService;
-  constructor(private dataservice: DataService) { 
+  constructor(private dataservice: LoginServiceService) { 
     this.dataservice.getCurrentUser().subscribe(arg => {
-      this.statusLog = arg;
+      this.statusLog = arg['status'];
     }); 
     console.log(this.statusLog); 
   }

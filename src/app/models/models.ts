@@ -8,6 +8,10 @@ export interface ImagenData {
   'description': String;
 }
 
+export interface User {
+  'user': String;
+  'password': String;
+}
 export interface UserData {
   'id': String;
   'name': String;
