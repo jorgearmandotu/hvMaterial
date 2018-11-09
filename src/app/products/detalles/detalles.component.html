@@ -1,10 +1,10 @@
-<div class="content-page" *ngFor="let detail of product">
-  <H1>{{detail.nameProduct}}</H1>
-  <img src="{{detail.urlImage}}">
+<div class="content-page" >
+  <H1>{{product.nameProduct}}</H1>
+  <img src="{{product.urlImage}}">
   <ul>
-    <li>name: {{detail.nameProduct}}</li>
-    <li>price: {{detail.price | currency:'COP':'$ ':'1.1-2'}}</li>
-    <li>descripcion: {{detail.descriptionProduct}}</li>
+    <li>name: {{product.nameProduct}}</li>
+    <li>price: {{product.price | currency:'COP':'$ ':'1.1-2'}}</li>
+    <li>descripcion: {{product.descriptionProduct}}</li>
   </ul>
-  <p text-angular ng-model="" class="alldetail">{{detail.allDescriptionProduct}}</p>
+  <p text-angular ng-model="" class="alldetail">{{product.allDescriptionProduct | SafeHtml}}</p>
 </div>

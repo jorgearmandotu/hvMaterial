@@ -18,6 +18,7 @@ export class LoginServiceService {
     
   }
   getCurrentUser(){
-    return this.http.get<StatusLog>('http://localhost/hvbackend/validLogin.php');
+    //return this.http.get<StatusLog>('http://localhost/hvbackend/validLogin.php');
+    return this.http.get<StatusLog>('http://localhost/hvbackend/loguear.php');
    }
 }

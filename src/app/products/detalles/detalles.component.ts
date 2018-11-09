@@ -11,7 +11,15 @@ import { Products } from 'src/app/models/Products';
 export class DetallesComponent implements OnInit {
 
   idP: number;
-  product = [];
+  product:Products = {
+    Idproduct:'',
+		nameProduct:'',
+		descriptionProduct:'',
+		allDescriptionProduct:'',
+		price:0,
+		urlImage:'',
+		category:''
+  };
 
   constructor(private _route: ActivatedRoute,  private dataservice: DataService) {
     let id = this._route.snapshot.paramMap.get('id');

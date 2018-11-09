@@ -9,17 +9,16 @@ import { LoginServiceService } from '../services/login-service.service';
 })
 export class AuthGuard implements CanActivate {
   statusLog ;
-  res:boolean; 
+  res:boolean = false; 
   constructor (private dataservice: LoginServiceService) {}  
   canActivate() {
-    let res;
     this.dataservice.getCurrentUser().subscribe(arg => {
     this.statusLog = arg;
     console.log(arg);
       if(arg['status']){
-        res = true;
+        this.res = true;
       }else{
-        res = true;
+        this.res = true;
       }
     });
     
@@ -27,6 +26,6 @@ export class AuthGuard implements CanActivate {
       this.res = element['status'];
     });
     return this.res;*/
-    return res;
+    return this.res;
   }
 }
