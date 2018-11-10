@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 import { Products } from 'src/app/models/Products';
+import { SafePipe } from 'src/app/safe.pipe';
 
 @Component({
   selector: 'app-detalles',

@@ -5,7 +5,7 @@
     <a routerLink='/' class="menuLinks" routerLinkActive="active"><mat-label class="example-icon">INICIO</mat-label></a>
     <app-input-search></app-input-search>
 
-    <mat-icon class="example-icon">add_shopping_cart</mat-icon>
+    <mat-icon class="example-icon" >add_shopping_cart</mat-icon>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">
        <a *ngIf="!statusLog" routerLink='/login'> <button mat-menu-item>Iniciar sesion</button></a>

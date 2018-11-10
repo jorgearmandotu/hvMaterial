@@ -9,8 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'hvMaterial';
   value = 'search';
+  carro = [];
   alerta() {
-  alert('searching');
+  alert('alerta click');
 
   }
+
 }

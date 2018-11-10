@@ -27,6 +27,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 //import { LoginComponent } from './auth/login/login.component';
 //import { AuthModule } from './auth/auth.module';
 import { from } from 'rxjs';
+import { SafePipe } from './safe.pipe';
+import { DialogProductComponent } from './dialog-product/dialog-product.component';
 //import { ProductsComponent } from './products/products.component';
 //import { DetalleProductComponent } from './products/detalle-product/detalle-product.component';
 //import { DetallesComponent } from './products/detalles/detalles.component';
@@ -43,6 +45,8 @@ import { from } from 'rxjs';
     FooterComponent,
     //LoginComponent,
     NotFoundComponent,
+    SafePipe,
+    DialogProductComponent,
     //ProductsComponent,
     //DetalleProductComponent,
     //DetallesComponent
@@ -59,6 +63,7 @@ import { from } from 'rxjs';
     //ProductsModule,
     //AuthModule,
   ],
+  entryComponents:[DialogProductComponent],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

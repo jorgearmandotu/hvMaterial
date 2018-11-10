@@ -16,7 +16,7 @@
         </mat-card-content>
         <mat-card-actions>
           <a routerLink = "/detalle/detail/{{product.Idproduct}}"><button mat-button>DETALLES</button></a>
-          <button mat-button><mat-icon class="example-icon">add_shopping_cart</mat-icon></button>
+          <button mat-button><mat-icon class="example-icon" (click)="setCar(product.Idproduct, product.nameProduct, product.price, product.descriptionProduct, product.urlImage)" >add_shopping_cart</mat-icon></button>
         </mat-card-actions>
       </mat-card>      
 

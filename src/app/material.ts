@@ -8,14 +8,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
   MatMenuModule, MatInputModule, MatFormFieldModule, MatTabsModule, MatCardModule,
-  MatSelectModule],
+  MatSelectModule, MatDialogModule],
   exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
   MatMenuModule, MatInputModule, MatFormFieldModule, MatTabsModule, MatCardModule,
-  MatSelectModule],
+  MatSelectModule, MatDialogModule],
 })
 export class MaterialModule { }

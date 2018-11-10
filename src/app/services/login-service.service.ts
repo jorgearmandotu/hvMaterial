@@ -9,6 +9,8 @@ import { StatusLog } from '../models/models'
 })
 export class LoginServiceService {
 
+  carrito = [];
+
   constructor( private http: HttpClient ) { 
     console.log('loginservice is running');
   } 
@@ -21,4 +23,8 @@ export class LoginServiceService {
     //return this.http.get<StatusLog>('http://localhost/hvbackend/validLogin.php');
     return this.http.get<StatusLog>('http://localhost/hvbackend/loguear.php');
    }
+
+  setCompras(id, cantidad){
+    this.carrito.push({IdProduct:id, cant:cantidad});
+  }
 }
