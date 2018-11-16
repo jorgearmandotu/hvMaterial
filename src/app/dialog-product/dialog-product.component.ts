@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Products } from '../models/Products';
+import { order } from '../models/order';
+import { BuyService } from '../services/buy.service';
 
 @Component({
   selector: 'app-dialog-product',
@@ -9,10 +11,16 @@ import { Products } from '../models/Products';
 })
 export class DialogProductComponent implements OnInit {
 
-  id;
+  prod = {
+    idProd:"",
+    cant: 1
+  }
+
   constructor(public dialogRef: MatDialogRef<DialogProductComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Products) {
+    @Inject(MAT_DIALOG_DATA) public data: Products, private buyservice:BuyService) {
       console.log(data);
+      alert(data.Idproduct);
+      this.prod.idProd = data.Idproduct;
      }
 
   ngOnInit() {
@@ -20,5 +28,8 @@ export class DialogProductComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
+  addCar(){
+    alert(this.prod.idProd);
+    //this.buyservice.addCar();
+  }
 }

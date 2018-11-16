@@ -10,7 +10,7 @@ export interface Products {
 }*/
 
 export interface Products {
-  'Idproduct': String;
+  'Idproduct': string;
   'nameProduct': String;
   'descriptionProduct': String;
   'allDescriptionProduct': String;

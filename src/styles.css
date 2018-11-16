@@ -3,6 +3,8 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+/*color azulhv: 00aff0  */
+
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; text-align: center; overflow-y: hidden }
 

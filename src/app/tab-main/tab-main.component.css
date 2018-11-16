@@ -5,10 +5,32 @@
 }
 
 .product-card {
-  max-width: 200px;
-  min-height: 390px;
+  width: 200px;
+  max-height: 330px;
+  min-height: 330px;
   float: left;
   margin: 3pt;
+  }
+  .cardIcon {
+    color: yellow;
+  }
+  .cardIcon:hover {
+    color: #000;
+  }
+  .cardButton:hover {
+    color: chartreuse;
+  }
+  .description-product {
+    height: 80px;
+    overflow-y: auto;
+  }
+  .img-product {
+    max-height: 120px;
+    max-width: 120px;
+  }
+  .action-product {
+    position: absolute;
+    bottom: 25px;
   }
   
 @media (max-width: 800px) {

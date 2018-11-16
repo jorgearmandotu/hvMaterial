@@ -24,7 +24,7 @@ export class TabMainComponent implements OnInit {
   setCar(id, name, price, description, image): void{
     const dialogRef = this.dialog.open(DialogProductComponent, {
       width: '600px',
-      data: {id: id, name: name, price: price, description: description, urlImage: image}
+      data: {IdProduct: id, name: name, price: price, description: description, urlImage: image}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -35,8 +35,5 @@ export class TabMainComponent implements OnInit {
 
 }
 
-@Component({
-  selector: 'detailProduct',
-  templateUrl: 'detailProduct.html',
-})
+
 

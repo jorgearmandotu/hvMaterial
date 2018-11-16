@@ -1,12 +1,40 @@
 header{
     background-attachment: fixed;
-    background-color: aqua;
+    
+    /*background: #ffffff; /* Old browsers */
+    /*background: -moz-linear-gradient(left, #ffffff 0%, #00aff0 100%); /* FF3.6-15 */
+    /*background: -webkit-linear-gradient(left, #ffffff 0%,#00aff0 100%); /* Chrome10-25,Safari5.1-6 */
+    /*background: linear-gradient(to right, #ffffff 0%,#00aff0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00aff0',GradientType=1 );/* IE6-9 */
+    
+    
+    background: -moz-linear-gradient(left, #000000 1%, #00aff0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #000000 1%,#00aff0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #000000 1%,#00aff0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00aff0',GradientType=1 ); /* IE6-9 */
+
     margin: 0%;
     overflow: hidden;
 }
+.header-container {
+    text-align: center;
+    height: 150px;
+}
 h1{
 padding:0m;
+color: #fff;
+text-shadow: #000 -1px 1px, #000 -2px 2px, #000 -3px 3px, #000000 -4px 4px, #000000 -5px 5px;
+letter-spacing: 1px;
 }
 h2{
- padding: 1em;
+ padding: 0em;
+ color: #FFF;
+ text-shadow: 3px 3px 2px #000000;
+}
+#logoHv {
+    float: left;
+}
+#logoHv img{
+    float: left;
+    max-width: 130px;
 }

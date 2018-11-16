@@ -8,15 +8,18 @@
           <mat-card-title>{{product.nameProduct}}</mat-card-title>
           <mat-card-subtitle> {{product.price | currency:'COP':'$ ':'1.1-2'}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src= {{product.urlImage}} alt=''>
+        <img class="img-product" mat-card-image src= {{product.urlImage}} alt=''>
         <mat-card-content>
+          <div class="description-product">
           <p>
             {{product.descriptionProduct}}
           </p>
+          </div>
         </mat-card-content>
-        <mat-card-actions>
-          <a routerLink = "/detalle/detail/{{product.Idproduct}}"><button mat-button>DETALLES</button></a>
-          <button mat-button><mat-icon class="example-icon" (click)="setCar(product.Idproduct, product.nameProduct, product.price, product.descriptionProduct, product.urlImage)" >add_shopping_cart</mat-icon></button>
+        <mat-card-actions class="action-product">
+          <a routerLink = "/detalle/detail/{{product.Idproduct}}"><button mat-raised-button >DETALLES</button></a>
+          <button mat-raised-button class="cardButton" aria-label="comprar" color="primary"
+           (click)="setCar(product.Idproduct, product.nameProduct, product.price, product.descriptionProduct, product.urlImage)"><mat-icon class="cardIcon">add_shopping_cart</mat-icon></button>
         </mat-card-actions>
       </mat-card>      
 
