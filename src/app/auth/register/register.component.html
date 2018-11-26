@@ -9,17 +9,20 @@
       <ng-template matStepLabel>Nos gustaria conocerte</ng-template>
       <div>
       <mat-form-field>
-        <input matInput placeholder="Nombres" formControlName="name" required>
+        <input matInput placeholder="Nombres" formControlName="name" required
+        [(ngModel)]="dataRegister.names">
       </mat-form-field>
       </div>
       <div>
       <mat-form-field>
-        <input matInput placeholder="apellidos" formControlName="lastName" required>
+        <input matInput placeholder="apellidos" formControlName="lastName" required
+        [(ngModel)]="dataRegister.lastNames">
       </mat-form-field>
       </div>
       <div>
       <mat-form-field>
-        <input matInput placeholder="Cedula" formControlName="cedula" required>
+        <input matInput placeholder="Cedula" formControlName="cedula" required
+        [(ngModel)]="dataRegister.id">
       </mat-form-field>
       </div>
       <div>
@@ -31,11 +34,13 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Como podemos contactarte? </ng-template>
       <mat-form-field>
-        <input matInput placeholder="email" formControlName="mail" required>
+        <input matInput placeholder="email" formControlName="mail" required
+        [(ngModel)]="dataRegister.email">
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput placeholder="telefono" formControlName="phone" required type="tel">
+        <input matInput placeholder="telefono" formControlName="phone" required type="tel"
+        [(ngModel)]="dataRegister.phone">
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Atras</button>
@@ -48,25 +53,39 @@
     <ng-template matStepLabel>como te gustaria iniciar sesion</ng-template>
     <div>
     <mat-form-field>
-        <input matInput placeholder="usuario" formControlName="user" required>
+        <input matInput placeholder="usuario" formControlName="user" required
+        [(ngModel)]="dataRegister.user">
+    </mat-form-field>
+    </div>
+    
+    <div>
+    <mat-form-field>
+        <input 
+        matInput placeholder="contraseña" 
+        formControlName="password" 
+        required type="password" 
+        id="pass"
+        ([ngModel])="dataRegister.password"> 
     </mat-form-field>
     </div>
     <div>
     <mat-form-field>
-        <input matInput placeholder="contraseña" formControlName="password" required type="password">
+        <input 
+        matInput placeholder="confirme contraseña" 
+        formControlName="passwordVerificate" 
+        required type="password" 
+        id="psswd"
+        >
     </mat-form-field>
     </div>
-    <div>
-        <mat-form-field>
-            <input matInput placeholder="cnfirme contraseña" formControlName="passwordConfirm" required type="password">
-        </mat-form-field>
-        </div>
+  
     <div>
       <button mat-button matStepperPrevious>Atras</button>
       <button mat-button (click)="stepper.reset()">reset</button>
-      <button mat-button >Registarme</button>
+      <button mat-button (click)="register(threeFormGroup.value)" >Registarme</button>
     </div>
     </form>
+    <h2>{{mensaje}}</h2>
   </mat-step>
 </mat-vertical-stepper> 
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { User } from '../models/models'
+import { User, RegisterData } from '../models/models'
 import { StatusLog } from '../models/models'
 
 @Injectable({
@@ -26,5 +26,9 @@ export class LoginServiceService {
 
   setCompras(id, cantidad){
     this.carrito.push({IdProduct:id, cant:cantidad});
+  }
+
+  setRegister(data: RegisterData){
+    return this.http.post<StatusLog>('http://localhost/hvbackend/register.php', data);
   }
 }

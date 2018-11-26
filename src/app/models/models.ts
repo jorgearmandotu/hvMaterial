@@ -40,3 +40,13 @@ export interface ProductsCategory {
   'nombre': String;
   'products': any;
 }
+
+export interface RegisterData {
+  names : string,
+  lastNames: string,
+  id: string,
+  email: string,
+  phone: string,
+  user: string,
+  password: string
+}
