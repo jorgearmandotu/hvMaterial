@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material';
@@ -21,6 +21,7 @@ const authRoutes : Routes = [
     MaterialModule,
     RouterModule.forChild(authRoutes),
     FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [RegisterComponent, LoginComponent]
 })

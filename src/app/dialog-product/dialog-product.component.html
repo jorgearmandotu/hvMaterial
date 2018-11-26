@@ -2,10 +2,13 @@
   <h1>{{data.nameProduct}}</h1>
   <img mat-card-image src= {{data.urlImage}} alt=''>
   <p>{{data.price}}</p>
-  <p>{{data.description}}</p>
-  <input type="text" [(ngModel)]="prod.idProd" value="data.id">
-  <span>Cantidad: </span><input MatInput type="number" [(ngModel)]="prod.cant">
-  <div class="car"(click)="addCar()"><mat-icon class="cardIcon">add_shopping_cart</mat-icon></div>
+  <p>{{data.descriptionProduct}}</p>
+  <input type="hidden" [(ngModel)]="prod.id">
+  <span>Cantidad: </span><input MatInput type="number" [(ngModel)]="prod.cant" min="0">
+  
+  <div class="option">
+  <div class="car"(click)="addCar()"><button mat-icon-button ><mat-icon class="cardIcon">add_shopping_cart</mat-icon></button></div>
   <button (click)="onNoClick()">cancelar</button>
-  <p>{{prod.cant}}</p>
+  </div>
+  
 </div>

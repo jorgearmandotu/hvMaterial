@@ -6,3 +6,8 @@ export interface order {
   'urlImage': String;
   'category': String;
 }
+
+export interface carBuy {
+  'id': string;
+  'cant': number;
+}

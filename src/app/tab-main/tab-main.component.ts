@@ -24,7 +24,7 @@ export class TabMainComponent implements OnInit {
   setCar(id, name, price, description, image): void{
     const dialogRef = this.dialog.open(DialogProductComponent, {
       width: '600px',
-      data: {IdProduct: id, name: name, price: price, description: description, urlImage: image}
+      data: {idProduct: id, name: name, price: price, description: description, urlImage: image}
     });
 
     dialogRef.afterClosed().subscribe(result => {

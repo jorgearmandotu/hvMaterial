@@ -1,0 +1,27 @@
+<div class="content-page">
+  <div *ngIf="!compras">
+    <h2>Upss AL PARCER NO TIENES COMPRAS PENDIENTES</h2>
+  </div>
+  <div *ngIf="compras">
+    <H1>CARRITO DE COMPRAS</H1>
+    <h3 mat-subheader>Productos</h3>
+    <div id="list-cart">
+    <div *ngFor="let cart of carritoDeatil; let i = index;">
+        <mat-list>
+            <mat-list-item>
+              <!--<mat-icon mat-list-icon><p>imagen va a qui</p></mat-icon>-->
+              <img mat-list-icon src={{cart.urlImage}} alt="image product">
+              <h4 mat-line>{{cart.nameProduct}}</h4>
+              <p mat-line>cantidad: {{carrito[i].cantidad}} </p>
+              <p mat-line>vlr unitario: {{cart.price}}</p>
+              <p mat-line>Total: {{cart.price * carrito[i].cantidad}}</p>
+              <mat-icon>delete_forever</mat-icon>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+    </div>
+  </div>
+    <p>Total a pagar: {{totalPay}}</p>
+    <button mat-fab color="primary">Comprar</button>
+  </div>
+</div>

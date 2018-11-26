@@ -1,16 +1,18 @@
+
+
 export interface StatusLog {
   'status': boolean;
 }
 
 export interface ImagenData {
-  'url': String;
-  'alt': String;
+  'url': string;
+  'alt': string;
   'description': String;
 }
 
 export interface User {
-  'user': String;
-  'password': String;
+  'user': string;
+  'password': string;
 }
 export interface UserData {
   'id': String;

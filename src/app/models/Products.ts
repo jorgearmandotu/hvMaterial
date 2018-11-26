@@ -18,3 +18,14 @@ export interface Products {
   'urlImage': String;
   'category': String;
 }
+
+export interface Products2 {
+  'Idproduct': string;
+  'nameProduct': String;
+  'descriptionProduct': String;
+  'allDescriptionProduct': String;
+  'price': number;
+  'urlImage': String;
+  'category': String;
+  'cantidad': number;
+}

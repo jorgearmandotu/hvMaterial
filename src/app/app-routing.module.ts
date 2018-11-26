@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './auth/auth.module#AuthModule'},
   { path: 'info', loadChildren: './info/info.module#InfoModule'},
   { path: 'detalle', loadChildren: './products/products.module#ProductsModule'},
+  { path: 'shoppingdetail', loadChildren: './shoppingcart/shoppingcart.module#ShoppingcartModule'},
  // { path: 'products', loadChildren: './products/products.model#ProductsModel'},
   { path: '**', component: NotFoundComponent },
   //{ path: 'not-found', component: NotFoundComponent },

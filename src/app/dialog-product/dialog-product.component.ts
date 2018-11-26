@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Products } from '../models/Products';
-import { order } from '../models/order';
+import { carBuy } from '../models/order';
 import { BuyService } from '../services/buy.service';
 
 @Component({
@@ -10,17 +10,31 @@ import { BuyService } from '../services/buy.service';
   styleUrls: ['./dialog-product.component.css']
 })
 export class DialogProductComponent implements OnInit {
-
+  data;
   prod = {
-    idProd:"",
+    id:"",
     cant: 1
-  }
+  };
+  carrito;
 
   constructor(public dialogRef: MatDialogRef<DialogProductComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Products, private buyservice:BuyService) {
-      console.log(data);
-      alert(data.Idproduct);
-      this.prod.idProd = data.Idproduct;
+    @Inject(MAT_DIALOG_DATA)  dataP, private buyservice:BuyService) {
+      console.log(dataP);
+      this.data = dataP;
+      this.prod.id = this.data.idProduct;
+      this.carrito = this.buyservice.getCar();
+      console.log(this.carrito);
+      if(this.carrito.length>0){
+        console.log(this.carrito);
+        this.carrito.forEach(element => {
+          if(element.idProduct == this.prod.id){
+            this.prod.cant = element.cantidad; 
+          }
+        });
+      }
+      else {
+        console.log(this.carrito.length);
+      }
      }
 
   ngOnInit() {
@@ -29,7 +43,7 @@ export class DialogProductComponent implements OnInit {
     this.dialogRef.close();
   }
   addCar(){
-    alert(this.prod.idProd);
-    //this.buyservice.addCar();
+    this.buyservice.addCar(this.prod);
+    this.dialogRef.close();
   }
 }
