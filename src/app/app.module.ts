@@ -29,6 +29,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { from } from 'rxjs';
 import { SafePipe } from './safe.pipe';
 import { DialogProductComponent } from './dialog-product/dialog-product.component';
+import { TruncateTextPipe } from './pipes/truncate-text.pipe';
 //import { ProductsComponent } from './products/products.component';
 //import { DetalleProductComponent } from './products/detalle-product/detalle-product.component';
 //import { DetallesComponent } from './products/detalles/detalles.component';
@@ -47,6 +48,7 @@ import { DialogProductComponent } from './dialog-product/dialog-product.componen
     NotFoundComponent,
     SafePipe,
     DialogProductComponent,
+    TruncateTextPipe,
     //ProductsComponent,
     //DetalleProductComponent,
     //DetallesComponent

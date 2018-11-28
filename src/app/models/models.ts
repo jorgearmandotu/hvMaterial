@@ -42,11 +42,11 @@ export interface ProductsCategory {
 }
 
 export interface RegisterData {
-  names : string,
-  lastNames: string,
-  id: string,
-  email: string,
-  phone: string,
-  user: string,
-  password: string
+  'names' : string,
+  'lastNames': string,
+  'id': string,
+  'email': string,
+  'phone': string,
+  'user': string,
+  'password': string
 }

@@ -20,7 +20,7 @@
   .cardButton:hover {
     color: chartreuse;
   }
-  .description-product {
+  #description-product {
     height: 80px;
     overflow-y: auto;
   }

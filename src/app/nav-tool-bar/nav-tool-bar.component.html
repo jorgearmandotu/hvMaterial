@@ -6,13 +6,15 @@
     <app-input-search></app-input-search>
 
     <a *ngIf="!statusLog" routerLink='/shoppingdetail' class="menuLinks"> <mat-icon class="example-icon" >add_shopping_cart</mat-icon></a>
+    <a *ngIf="!statusLog" routerLink='/login' class="menuLinks"> <mat-icon class="example-icon" >account_circle</mat-icon></a>
+    <a *ngIf="statusLog" routerLink='/' class="menuLinks"> <mat-icon class="example-icon" >account_circle</mat-icon></a>
     <!--<a *ngIf="!statusLog" routerLink='/login' class="menuLinks"> <mat-icon class="example-icon" >add_shopping_cart</mat-icon></a>-->
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">
        <a *ngIf="!statusLog" routerLink='/login'> <button mat-menu-item>Iniciar sesion</button></a>
        <a *ngIf="!statusLog" routerLink='/login/register'> <button mat-menu-item>registrese</button></a>
        <a *ngIf="statusLog" routerLink='/login'> <button mat-menu-item>Cerrar sesion</button> </a>
-       <a routerLink='/info'> <button mat-menu-item>Quienes somos{{statusLog}}</button></a>
+       <a routerLink='/info'> <button mat-menu-item>Quienes somos</button></a>
       </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

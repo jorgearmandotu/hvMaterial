@@ -4,25 +4,22 @@
   {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
 </button>-->
 <mat-vertical-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+  <mat-step [stepControl]="datosFormGroup">
+    <form [formGroup]="datosFormGroup">
       <ng-template matStepLabel>Nos gustaria conocerte</ng-template>
       <div>
       <mat-form-field>
-        <input matInput placeholder="Nombres" formControlName="name" required
-        [(ngModel)]="dataRegister.names">
+        <input matInput placeholder="Nombres" formControlName="names" required>
       </mat-form-field>
       </div>
       <div>
       <mat-form-field>
-        <input matInput placeholder="apellidos" formControlName="lastName" required
-        [(ngModel)]="dataRegister.lastNames">
+        <input matInput placeholder="apellidos" formControlName="lastNames" required>
       </mat-form-field>
       </div>
       <div>
       <mat-form-field>
-        <input matInput placeholder="Cedula" formControlName="cedula" required
-        [(ngModel)]="dataRegister.id">
+        <input matInput placeholder="Cedula" formControlName="id" required>
       </mat-form-field>
       </div>
       <div>
@@ -30,17 +27,15 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+  <mat-step [stepControl]="contactoFormGroup">
+    <form [formGroup]="contactoFormGroup">
       <ng-template matStepLabel>Como podemos contactarte? </ng-template>
       <mat-form-field>
-        <input matInput placeholder="email" formControlName="mail" required
-        [(ngModel)]="dataRegister.email">
+        <input matInput placeholder="email" formControlName="email" required>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput placeholder="telefono" formControlName="phone" required type="tel"
-        [(ngModel)]="dataRegister.phone">
+        <input matInput placeholder="telefono" formControlName="phone" required type="tel">
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Atras</button>
@@ -48,30 +43,28 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="threeFormGroup">
-    <form [formGroup]="threeFormGroup">
+  <mat-step [stepControl]="loginFormGroup">
+    <form [formGroup]="loginFormGroup">
     <ng-template matStepLabel>como te gustaria iniciar sesion</ng-template>
     <div>
     <mat-form-field>
-        <input matInput placeholder="usuario" formControlName="user" required
-        [(ngModel)]="dataRegister.user">
+        <input matInput placeholder="usuario" formControlName="user" required>
     </mat-form-field>
     </div>
     
     <div>
     <mat-form-field>
         <input 
-        matInput placeholder="contraseña" 
+        matInput placeholder="contraseña debe contener minimo (6)caracteres" 
         formControlName="password" 
         required type="password" 
-        id="pass"
-        ([ngModel])="dataRegister.password"> 
+        id="pass"> 
     </mat-form-field>
     </div>
     <div>
     <mat-form-field>
         <input 
-        matInput placeholder="confirme contraseña" 
+        matInput placeholder="confirme contraseña debe contener minimo (6) caracteres" 
         formControlName="passwordVerificate" 
         required type="password" 
         id="psswd"
@@ -82,7 +75,7 @@
     <div>
       <button mat-button matStepperPrevious>Atras</button>
       <button mat-button (click)="stepper.reset()">reset</button>
-      <button mat-button (click)="register(threeFormGroup.value)" >Registarme</button>
+      <button mat-button (click)="register()" >Registarme</button>
     </div>
     </form>
     <h2>{{mensaje}}</h2>
