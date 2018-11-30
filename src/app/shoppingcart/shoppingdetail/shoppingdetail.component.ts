@@ -23,8 +23,14 @@ export class ShoppingdetailComponent implements OnInit {
     
   };
   compras = false;
-  constructor( carservice:BuyService, private dataservice:DataService) {
-    this.carrito = carservice.getCar();
+  constructor(private carservice:BuyService, private dataservice:DataService) {
+    
+    console.log('detalles de carrro');
+      console.log(this.carritoDeatil);
+  }
+
+  ngOnInit() {
+    this.carrito = this.carservice.getCar();
     if(this.carrito.length > 0) {
       this.compras = true;
       this.carrito.forEach(element => {
@@ -35,11 +41,37 @@ export class ShoppingdetailComponent implements OnInit {
           });
       });
     }
-    console.log('detalles de carrro');
-      console.log(this.carritoDeatil);
   }
 
-  ngOnInit() {
+  delShop(id){
+    this.carrito.forEach(element => {
+      if(element.idProduct == id){
+        let index = this.carrito.indexOf(element);
+        this.carritoDeatil.splice(index, 1);
+        this.carrito.splice(index, 1);
+        
+        console.log(this.carrito.indexOf(element));
+        return;
+        }
+      });
+    console.log('deletear A '+id);
+    console.log('este es carrito '+this.carrito.length);
+    if(this.carrito.length > 0) {
+      //this.compras = true;
+      this.totalPay = 0;
+      this.carrito.forEach(element => {
+        this.dataservice.getDetailProduct(element.idProduct).subscribe(arg => {
+          this.product = arg;
+          //this.carritoDeatil.push(this.product);
+          this.totalPay +=this.product.price * element.cantidad;
+          });
+      });
+    }else{
+      this.compras = false;
+    }
+    this.carservice.updateShop(this.carrito)
+    //this.ngOnInit();
+    //location.reload();
   }
-
+  
 }

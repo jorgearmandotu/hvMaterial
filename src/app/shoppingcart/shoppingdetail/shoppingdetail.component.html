@@ -15,7 +15,9 @@
               <p mat-line>cantidad: {{carrito[i].cantidad}} </p>
               <p mat-line>vlr unitario: {{cart.price}}</p>
               <p mat-line>Total: {{cart.price * carrito[i].cantidad}}</p>
-              <mat-icon>delete_forever</mat-icon>
+              <button (click)="delShop(carrito[i].idProduct);"><mat-icon>delete_forever</mat-icon>
+              <p>el id es: {{carrito[i].idProduct}}</p></button>
+              
             </mat-list-item>
             <mat-divider></mat-divider>
         </mat-list>

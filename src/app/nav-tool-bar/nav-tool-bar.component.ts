@@ -12,6 +12,7 @@ import { AuthGuard } from '../guards/auth.guard';
 export class NavToolBarComponent implements OnInit {
 
   statusLog;
+  usuario = 'usuarioOutLogin';
   //dataservice: DataService;
   constructor(private dataservice: LoginServiceService) { 
     this.dataservice.getCurrentUser().subscribe(arg => {
@@ -35,6 +36,11 @@ export class NavToolBarComponent implements OnInit {
     }else{
       console.log('status es false pre');
     }
+  }
+
+  logout(){
+    this.dataservice.logout();
+    location.reload();
   }
 
 }

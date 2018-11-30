@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
   status;
+  mensaje: string="";
   constructor( private loginservice: LoginServiceService, private router:Router) {
    }
 
@@ -31,10 +32,9 @@ export class LoginComponent implements OnInit {
       if(arg['status']){
         console.log('redirecion aprobada');
         //this.router.navigate(['/']);
-        this.loginservice.getCurrentUser().subscribe(arg => {
-          console.log(arg['status']);
-        }); 
-      }
+        location.reload();
+        this.router.navigate(['/inicio']);
+      }else{ this.mensaje = 'Datos Erroneos'; alert("error verifique datos"); }
     });
   }
 

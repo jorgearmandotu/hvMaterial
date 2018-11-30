@@ -31,4 +31,8 @@ export class LoginServiceService {
   setRegister(data: RegisterData){
     return this.http.post<StatusLog>('http://localhost/hvbackend/register.php', data);
   }
+
+  logout(){
+    return this.http.get('http://localhost/hvbackend/logout.php');
+  }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { ProductsModule } from '../products/products.module';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DialogProductComponent } from '../dialog-product/dialog-product.component';
+import { LoginServiceService } from '../services/login-service.service';
 
 
 @Component({
@@ -13,12 +14,14 @@ import { DialogProductComponent } from '../dialog-product/dialog-product.compone
 export class TabMainComponent implements OnInit {
 
   categorys = [];
-  constructor(private dataservice: DataService, public dialog: MatDialog) {
+  statusLog: boolean = false;
+  constructor(private dataservice: DataService, public dialog: MatDialog, private loginservice:LoginServiceService) {
     this.dataservice.getAllProducts().subscribe(arg => {
       this.categorys = arg;
     }); 
    } 
   ngOnInit() {
+    this.onCheckUser();
   }
 
   setCar(id, name, price, description, image): void{
@@ -31,6 +34,16 @@ export class TabMainComponent implements OnInit {
       console.log('The dialog was closed');
       
     });
+  }
+
+  onCheckUser() {
+    this.loginservice.getCurrentUser().subscribe(arg => {
+        if(arg['status']){
+          this.statusLog = true;
+        }else{
+          this.statusLog = true;
+        }
+      });
   }
 
 }

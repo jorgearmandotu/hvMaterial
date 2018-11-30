@@ -2,12 +2,16 @@
   <mat-toolbar-row>
     <div id="nav-bar-logo"><img src="assets/thumbs/logohvtransparencia.png"></div>
     <span class="example-spacer"></span>
-    <a routerLink='/' class="menuLinks" routerLinkActive="active"><mat-label class="example-icon">INICIO</mat-label></a>
+    <a routerLink='/' class="menuLinks" routerLinkActive="active"><mat-label class="example-icon"><mat-icon>home</mat-icon>INICIO</mat-label></a>
     <app-input-search></app-input-search>
 
-    <a *ngIf="!statusLog" routerLink='/shoppingdetail' class="menuLinks"> <mat-icon class="example-icon" >add_shopping_cart</mat-icon></a>
-    <a *ngIf="!statusLog" routerLink='/login' class="menuLinks"> <mat-icon class="example-icon" >account_circle</mat-icon></a>
-    <a *ngIf="statusLog" routerLink='/' class="menuLinks"> <mat-icon class="example-icon" >account_circle</mat-icon></a>
+    <a *ngIf="!statusLog" routerLink='/shoppingdetail' class="menuLinks"> <mat-icon class="shopping-icon" >add_shopping_cart</mat-icon></a>
+    
+    <mat-list click="logout()"><mat-list-item *ngIf="!statusLog"><a routerLink='/login' class="menuLinks"> <mat-icon class="account-icon" mat-line >account_circle</mat-icon><span mat-line >log in
+    </span></a></mat-list-item></mat-list>
+    <mat-list><mat-list-item *ngIf="statusLog" ><a (click)="logout()" class="menuLinks"> <mat-icon class="account-icon" mat-line >account_circle</mat-icon><span mat-line >log out
+    </span></a></mat-list-item></mat-list>
+
     <!--<a *ngIf="!statusLog" routerLink='/login' class="menuLinks"> <mat-icon class="example-icon" >add_shopping_cart</mat-icon></a>-->
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">

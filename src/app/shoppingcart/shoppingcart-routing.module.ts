@@ -4,7 +4,7 @@ import { ShoppingdetailComponent } from './shoppingdetail/shoppingdetail.compone
 import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: ShoppingdetailComponent/*, canActivate: [AuthGuard]*/ },
+{ path: '', component: ShoppingdetailComponent, canActivate: [AuthGuard] },
   
 ];
 
