@@ -32,6 +32,11 @@
     position: absolute;
     bottom: 25px;
   }
+
+  a button.selected {
+    background-color: red;
+    color: white;
+  }
   
 @media (max-width: 800px) {
   .tab-main {
@@ -39,4 +44,5 @@
     text-align: left;
     margin: 0% auto;
   }
+  
 }

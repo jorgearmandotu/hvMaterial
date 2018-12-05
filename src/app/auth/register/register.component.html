@@ -30,13 +30,17 @@
   <mat-step [stepControl]="contactoFormGroup">
     <form [formGroup]="contactoFormGroup">
       <ng-template matStepLabel>Como podemos contactarte? </ng-template>
+      <div>
       <mat-form-field>
-        <input matInput placeholder="email" formControlName="email" required>
+        <input matInput placeholder="email" formControlName="email" required (blur)="validationEmail()">
       </mat-form-field>
-      <br>
+      </div>
+      <span class="message-alert">{{mensajeEmail}}</span>
+      <div>
       <mat-form-field>
         <input matInput placeholder="telefono" formControlName="phone" required type="tel">
       </mat-form-field>
+      </div>
       <div>
         <button mat-button matStepperPrevious>Atras</button>
         <button mat-button matStepperNext>Siguiente</button>
@@ -48,10 +52,10 @@
     <ng-template matStepLabel>como te gustaria iniciar sesion</ng-template>
     <div>
     <mat-form-field>
-        <input matInput placeholder="usuario" formControlName="user" required>
+        <input matInput placeholder="usuario" formControlName="user" required  (blur)="validationUser()">
     </mat-form-field>
     </div>
-    
+    <span class="message-alert">{{mensajeUser}}</span>
     <div>
     <mat-form-field>
         <input 
@@ -68,17 +72,18 @@
         formControlName="passwordVerificate" 
         required type="password" 
         id="psswd"
+        (blur)="validatePass()"
         >
     </mat-form-field>
     </div>
-  
+    <span class="message-alert">{{mensajePass}}</span>
     <div>
       <button mat-button matStepperPrevious>Atras</button>
       <button mat-button (click)="stepper.reset()">reset</button>
-      <button mat-button (click)="register()" >Registarme</button>
+      <button [disabled]="!isValidUser" mat-button (click)="register()" >Registarme</button>
     </div>
     </form>
-    <h2>{{mensaje}}</h2>
+    <h2 class="message-alert">{{mensaje}}</h2>
   </mat-step>
 </mat-vertical-stepper> 
 

@@ -4,7 +4,11 @@ import { ProductsModule } from '../products/products.module';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DialogProductComponent } from '../dialog-product/dialog-product.component';
 import { LoginServiceService } from '../services/login-service.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { Products } from '../models/Products';
+import { PARAMETERS } from '@angular/core/src/util/decorators';
 
 @Component({
   selector: 'app-tab-main',
@@ -15,13 +19,19 @@ export class TabMainComponent implements OnInit {
 
   categorys = [];
   statusLog: boolean = false;
-  constructor(private dataservice: DataService, public dialog: MatDialog, private loginservice:LoginServiceService) {
+  selectedId;
+  heroes$: Observable<Products[]>;
+  constructor(private dataservice: DataService, public dialog: MatDialog, private loginservice:LoginServiceService, private route:ActivatedRoute) {
     this.dataservice.getAllProducts().subscribe(arg => {
+      
       this.categorys = arg;
     }); 
    } 
   ngOnInit() {
     this.onCheckUser();
+    let id = this.route.snapshot.paramMap.get('id');
+    console.log('esta es la id del product: '+id);
+    this.selectedId = id;
   }
 
   setCar(id, name, price, description, image): void{

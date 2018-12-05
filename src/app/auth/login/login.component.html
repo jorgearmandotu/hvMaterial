@@ -1,12 +1,13 @@
 <div class="content-page">
   <div class="form-login">
-    <form (ngsubmit) = "login()">
+    
+    <form (ngsubmit) = "login()" [formGroup]="loginForm">
       <mat-form-field class="inputsForm">
-        <input matInput placeholder="usuario o email" name="user" [(ngModel)]="user.user">
+        <input matInput placeholder="usuario o email"  formControlName="user">
       </mat-form-field>
 
       <mat-form-field class="inputsForm">
-        <input matInput placeholder="contraseña" type="password" name="password" [(ngModel)]="user.password" >
+        <input matInput placeholder="contraseña" type="password" formControlName="password">
       </mat-form-field>
 
       <button mat-raised-button color="primary" class="buttonForm" (click)="login()">LOG IN</button>

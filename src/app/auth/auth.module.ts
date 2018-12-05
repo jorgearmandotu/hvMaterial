@@ -7,6 +7,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from '../not-found/not-found.component'
 
 import { AuthGuard } from '../guards/auth.guard';
 

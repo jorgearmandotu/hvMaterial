@@ -4,10 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../guards/auth.guard';
 import { LoginComponent } from '../auth/login/login.component';
 import { RegisterComponent } from '../auth/register/register.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 const routes: Routes = [
-{ path:'', component: LoginComponent , /*canActivate: [AuthGuard]*/ },
-  { path:'register', component: RegisterComponent }
+  { path:'', component: LoginComponent , /*canActivate: [AuthGuard]*/ },
+  { path:'register', component: RegisterComponent },
+  
 ];
 
 @NgModule({

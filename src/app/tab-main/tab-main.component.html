@@ -18,7 +18,8 @@
           </div>
         </mat-card-content>
         <mat-card-actions class="action-product">
-          <a routerLink = "/detalle/detail/{{product.Idproduct}}"><button mat-raised-button >DETALLES</button></a>
+
+          <a routerLink = "/detalle/detail/{{product.Idproduct}}"><button mat-raised-button [class.selected]="product.Idproduct === selectedId"> DETALLES</button></a>
           <button *ngIf="statusLog" mat-raised-button class="cardButton" aria-label="comprar" color="primary"
            (click)="setCar(product.Idproduct, product.nameProduct, product.price, product.descriptionProduct, product.urlImage)"><mat-icon class="cardIcon">add_shopping_cart</mat-icon></button>
            <a routerLink = "/login" *ngIf="!statusLog"> <button  mat-raised-button class="cardButton" aria-label="comprar" color="primary"><mat-icon class="cardIcon">add_shopping_cart</mat-icon></button></a>

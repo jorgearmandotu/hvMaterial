@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 import { Products } from 'src/app/models/Products';
 import { SafePipe } from 'src/app/safe.pipe';
@@ -22,7 +22,7 @@ export class DetallesComponent implements OnInit {
 		category:''
   };
 
-  constructor(private _route: ActivatedRoute,  private dataservice: DataService) {
+  constructor(private _route: ActivatedRoute,  private dataservice: DataService, private router:Router) {
     let id = this._route.snapshot.paramMap.get('id');
     this.idP = +id;
     this.dataservice.getDetailProduct(this.idP).subscribe(arg => {
@@ -35,8 +35,11 @@ export class DetallesComponent implements OnInit {
   ngOnInit() {
     //let id = this._route.snapshot.paramMap.get('id');
     //alert('el id es '+id);
-    
+  }
 
+  gotoInicio(){
+    let pid = this.idP;
+    this.router.navigate(['/inicio', {id:pid, foo: 'foo'}]);
   }
 
 }

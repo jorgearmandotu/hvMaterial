@@ -33,6 +33,14 @@ export class LoginServiceService {
   }
 
   logout(){
-    return this.http.get('http://localhost/hvbackend/logout.php');
+    return this.http.get<StatusLog>('http://localhost/hvbackend/logout.php');
+  }
+  userValidator(user){
+    console.log('validation user');
+    return this.http.post<boolean>('http://localhost/hvbackend/validUser.php',user);
+  }
+  emailValidator(email){
+    console.log('validation email');
+    return this.http.post<boolean>('http://localhost/hvbackend/validEmail.php',email);
   }
 }

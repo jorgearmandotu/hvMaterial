@@ -14,3 +14,9 @@
     overflow-y: auto;
     max-height: 18em;
 }
+.buttons-option button {
+    margin-right: 8px;
+}
+.del-button {
+    cursor: pointer;
+}
